@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://bdjg550b8020q"]
+
+[ext_resource type="Script" path="res://Resource/Script/IngredientData.gd" id="1_a0hji"]
+[ext_resource type="Resource" uid="uid://c7w654hynopd8" path="res://Resource/Ingredient/smootie.tres" id="2_h758f"]
+[ext_resource type="Resource" uid="uid://rqouv35acd2l" path="res://Resource/Ingredient/toast.tres" id="3_qr03c"]
+[ext_resource type="Script" path="res://Resource/Script/FoodData.gd" id="4_bxl44"]
+
+[resource]
+script = ExtResource("4_bxl44")
+foodName = "eba"
+ingredientsData = Array[ExtResource("1_a0hji")]([ExtResource("2_h758f"), ExtResource("3_qr03c")])
+importantIngredients = Array[ExtResource("1_a0hji")]([])
+duration = 0.0

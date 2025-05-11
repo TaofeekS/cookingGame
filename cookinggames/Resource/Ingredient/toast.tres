@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://rqouv35acd2l"]
+
+[ext_resource type="Texture2D" uid="uid://gathnxk1kkub" path="res://assets/Burned_Toast.png" id="1_m2ou8"]
+[ext_resource type="Script" path="res://Resource/Script/IngredientData.gd" id="2_1mqpw"]
+
+[resource]
+script = ExtResource("2_1mqpw")
+ingredientImage = ExtResource("1_m2ou8")
+ingredientName = "toast"

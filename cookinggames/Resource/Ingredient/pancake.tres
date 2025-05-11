@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://boyf2nvc7sebu"]
+
+[ext_resource type="Texture2D" uid="uid://cwtfwm74i214j" path="res://assets/Pancakes.png" id="1_m1lun"]
+[ext_resource type="Script" path="res://Resource/Script/IngredientData.gd" id="2_rvktg"]
+
+[resource]
+script = ExtResource("2_rvktg")
+ingredientImage = ExtResource("1_m1lun")
+ingredientName = "pancakes"

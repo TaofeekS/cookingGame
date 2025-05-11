@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://erjc4y4cmsiw"]
+
+[ext_resource type="Texture2D" uid="uid://br6pfdsao1hyl" path="res://assets/Smoothie.png" id="1_6efw6"]
+[ext_resource type="Script" path="res://src/IngredientCont/Script/ingredient_cont.gd" id="1_yannf"]
+[ext_resource type="Script" path="res://src/IngBtn/Script/ing_btn.gd" id="2_fpfju"]
+
+[node name="Resturant" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ingredientCont" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 424.0
+offset_bottom = 387.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 50
+columns = 3
+script = ExtResource("1_yannf")
+
+[node name="ingBtn" type="Button" parent="ingredientCont"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+icon = ExtResource("1_6efw6")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_fpfju")
+
+[node name="foodName" type="Label" parent="ingredientCont/ingBtn"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 104.0
+offset_right = 90.0
+offset_bottom = 127.0
+text = "HAHHA"

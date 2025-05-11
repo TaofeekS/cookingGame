@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://bwonn8gs4hb7h"]
+
+[ext_resource type="Texture2D" uid="uid://b80h8xh8p1bsw" path="res://assets/Mug_Cake.png" id="1_cagc5"]
+[ext_resource type="Script" path="res://Resource/Script/IngredientData.gd" id="2_w5poq"]
+
+[resource]
+script = ExtResource("2_w5poq")
+ingredientImage = ExtResource("1_cagc5")
+ingredientName = "mug_cake"
