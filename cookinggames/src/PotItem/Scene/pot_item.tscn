@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://piambq5naaoa"]
+
+[ext_resource type="Texture2D" uid="uid://f347pvqd7lwl" path="res://assets/Salami_Rose.png" id="1_68ihn"]
+[ext_resource type="Script" path="res://src/PotItem/Script/pot_item.gd" id="2_gbtt2"]
+
+[node name="potItem" type="TextureRect"]
+custom_minimum_size = Vector2(100, 100)
+texture = ExtResource("1_68ihn")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_gbtt2")
+
+[node name="closeBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 79.0
+offset_top = -14.0
+offset_right = 119.0
+offset_bottom = 26.0
+text = "DE"
+
+[connection signal="pressed" from="closeBtn" to="." method="_on_close_btn_pressed"]

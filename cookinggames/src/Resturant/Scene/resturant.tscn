@@ -1,8 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://erjc4y4cmsiw"]
+[gd_scene load_steps=24 format=3 uid="uid://erjc4y4cmsiw"]
 
-[ext_resource type="Texture2D" uid="uid://br6pfdsao1hyl" path="res://assets/Smoothie.png" id="1_6efw6"]
+[ext_resource type="Script" path="res://src/Resturant/Script/resturant.gd" id="1_a16i8"]
 [ext_resource type="Script" path="res://src/IngredientCont/Script/ingredient_cont.gd" id="1_yannf"]
-[ext_resource type="Script" path="res://src/IngBtn/Script/ing_btn.gd" id="2_fpfju"]
+[ext_resource type="Script" path="res://Resource/Script/IngredientData.gd" id="2_mao1v"]
+[ext_resource type="Script" path="res://Resource/Script/OrderData.gd" id="2_oivbp"]
+[ext_resource type="Texture2D" uid="uid://desdfvkmsvv6g" path="res://icon.svg" id="3_c6hwc"]
+[ext_resource type="Resource" uid="uid://bwonn8gs4hb7h" path="res://Resource/Ingredient/ghee.tres" id="3_c12bj"]
+[ext_resource type="Resource" uid="uid://ch5dyugset1j1" path="res://Resource/Food/Eba.tres" id="3_rn8sq"]
+[ext_resource type="Resource" uid="uid://db5mykv3msvrq" path="res://Resource/Ingredient/mug_cake.tres" id="4_oh5en"]
+[ext_resource type="Resource" uid="uid://boyf2nvc7sebu" path="res://Resource/Ingredient/pancake.tres" id="5_75b37"]
+[ext_resource type="Resource" uid="uid://c7w654hynopd8" path="res://Resource/Ingredient/smootie.tres" id="6_ywgcb"]
+[ext_resource type="Resource" uid="uid://rqouv35acd2l" path="res://Resource/Ingredient/toast.tres" id="7_f0x7e"]
+[ext_resource type="PackedScene" uid="uid://duvsi3r8ft023" path="res://src/IngBtn/Scene/ing_btn.tscn" id="8_dj4mr"]
+[ext_resource type="Script" path="res://src/PotContainer/Script/pot_container.gd" id="9_gfd3h"]
+[ext_resource type="Script" path="res://src/OrderInfo/Script/order_info.gd" id="14_tjape"]
+[ext_resource type="PackedScene" uid="uid://bpfw14fvg18jo" path="res://src/hatedIngredientNode/Scene/hated_ingredient_node.tscn" id="15_gshio"]
+[ext_resource type="Texture2D" uid="uid://wckgmcyrqydp" path="res://assets/Blueberry_Porridge.png" id="16_b6xw0"]
+
+[sub_resource type="Resource" id="Resource_s2xf3"]
+script = ExtResource("2_oivbp")
+characterIcon = ExtResource("3_c6hwc")
+foodOrder = ExtResource("3_rn8sq")
+hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("4_oh5en")])
+
+[sub_resource type="Resource" id="Resource_qypts"]
+script = ExtResource("2_oivbp")
+characterIcon = ExtResource("3_c6hwc")
+foodOrder = ExtResource("3_rn8sq")
+hatedIngredientsData = Array[ExtResource("2_mao1v")]([])
+
+[sub_resource type="Resource" id="Resource_tw3co"]
+script = ExtResource("2_oivbp")
+characterIcon = ExtResource("3_c6hwc")
+foodOrder = ExtResource("3_rn8sq")
+hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("6_ywgcb"), ExtResource("5_75b37"), ExtResource("3_c12bj")])
+
+[sub_resource type="Resource" id="Resource_3mnye"]
+script = ExtResource("2_oivbp")
+characterIcon = ExtResource("3_c6hwc")
+foodOrder = ExtResource("3_rn8sq")
+hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("6_ywgcb"), ExtResource("7_f0x7e")])
+
+[sub_resource type="Resource" id="Resource_va0fd"]
+script = ExtResource("2_oivbp")
+characterIcon = ExtResource("3_c6hwc")
+foodOrder = ExtResource("3_rn8sq")
+hatedIngredientsData = Array[ExtResource("2_mao1v")]([])
+
+[sub_resource type="Resource" id="Resource_qll8a"]
+script = ExtResource("2_oivbp")
+characterIcon = ExtResource("3_c6hwc")
+foodOrder = ExtResource("3_rn8sq")
+hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("3_c12bj"), ExtResource("7_f0x7e")])
+
+[sub_resource type="Resource" id="Resource_ljkhe"]
+script = ExtResource("2_oivbp")
+characterIcon = ExtResource("3_c6hwc")
+foodOrder = ExtResource("3_rn8sq")
+hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("3_c12bj"), ExtResource("6_ywgcb")])
 
 [node name="Resturant" type="Control"]
 layout_mode = 3
@@ -11,28 +66,134 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_a16i8")
+ordersData = Array[ExtResource("2_oivbp")]([SubResource("Resource_s2xf3"), SubResource("Resource_qypts"), SubResource("Resource_tw3co"), SubResource("Resource_3mnye"), SubResource("Resource_va0fd"), SubResource("Resource_qll8a"), SubResource("Resource_ljkhe")])
 
 [node name="ingredientCont" type="GridContainer" parent="."]
-layout_mode = 0
-offset_right = 424.0
-offset_bottom = 387.0
+layout_mode = 1
+offset_right = 413.0
+offset_bottom = 401.0
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 50
 columns = 3
 script = ExtResource("1_yannf")
+ingredientsData = Array[ExtResource("2_mao1v")]([ExtResource("3_c12bj"), ExtResource("4_oh5en"), ExtResource("5_75b37"), ExtResource("6_ywgcb"), ExtResource("7_f0x7e")])
 
-[node name="ingBtn" type="Button" parent="ingredientCont"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ingBtn" parent="ingredientCont" instance=ExtResource("8_dj4mr")]
 layout_mode = 2
-icon = ExtResource("1_6efw6")
-icon_alignment = 1
-expand_icon = true
-script = ExtResource("2_fpfju")
 
-[node name="foodName" type="Label" parent="ingredientCont/ingBtn"]
+[node name="potContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -306.0
+offset_right = 464.0
+grow_vertical = 0
+script = ExtResource("9_gfd3h")
+
+[node name="GridContainer" type="GridContainer" parent="potContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="orderInfo" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 104.0
-offset_right = 90.0
-offset_bottom = 127.0
-text = "HAHHA"
+offset_left = 538.0
+offset_top = -5.0
+offset_right = 1151.0
+offset_bottom = 659.0
+script = ExtResource("14_tjape")
+
+[node name="icon" type="TextureRect" parent="orderInfo"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.5
+offset_top = 44.0
+offset_right = 55.5
+offset_bottom = 144.0
+grow_horizontal = 2
+texture = ExtResource("3_c6hwc")
+
+[node name="hatedIngredientCont" type="Control" parent="orderInfo"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -273.0
+offset_top = -359.0
+offset_right = -29.0
+offset_bottom = 3.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="orderInfo/hatedIngredientCont"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "HATED INGREDIENTS"
+horizontal_alignment = 1
+
+[node name="hatedIngredients" type="HBoxContainer" parent="orderInfo/hatedIngredientCont"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = 151.0
+offset_right = 22.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="hatedIngredientNode" parent="orderInfo/hatedIngredientCont/hatedIngredients" instance=ExtResource("15_gshio")]
+layout_mode = 2
+texture = ExtResource("16_b6xw0")
+
+[node name="hatedIngredientNode2" parent="orderInfo/hatedIngredientCont/hatedIngredients" instance=ExtResource("15_gshio")]
+layout_mode = 2
+texture = ExtResource("16_b6xw0")
+
+[node name="hatedIngredientNode3" parent="orderInfo/hatedIngredientCont/hatedIngredients" instance=ExtResource("15_gshio")]
+layout_mode = 2
+texture = ExtResource("16_b6xw0")
+
+[node name="foodDetails" type="Control" parent="orderInfo"]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 270.0
+offset_right = 255.0
+offset_bottom = 635.0
+
+[node name="Label" type="Label" parent="orderInfo/foodDetails"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "AGAGAFGAFGAFGAF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = -109.0
+offset_right = 334.0
+offset_bottom = -4.0
+grow_vertical = 0
+text = "prepare
+"

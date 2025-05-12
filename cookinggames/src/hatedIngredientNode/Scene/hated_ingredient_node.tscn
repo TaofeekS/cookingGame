@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bpfw14fvg18jo"]
+
+[node name="hatedIngredientNode" type="TextureRect"]
+custom_minimum_size = Vector2(70, 70)
+expand_mode = 1
+stretch_mode = 5

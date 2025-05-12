@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://duvsi3r8ft023"]
+
+[ext_resource type="Texture2D" uid="uid://br6pfdsao1hyl" path="res://assets/Smoothie.png" id="1_c6gyg"]
+[ext_resource type="Script" path="res://src/IngBtn/Script/ing_btn.gd" id="2_i1o8d"]
+
+[node name="ingBtn" type="Button"]
+custom_minimum_size = Vector2(100, 100)
+icon = ExtResource("1_c6gyg")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_i1o8d")
+
+[node name="foodName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 104.0
+offset_right = 90.0
+offset_bottom = 127.0
+text = "HAHHA"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
