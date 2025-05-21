@@ -20,7 +20,8 @@ func onOrderDataSet(_orderData):
 	orderData = _orderData
 	deleteOldIngredients()
 	$foodDetails/Label.text = orderData.foodOrder.foodName
-	$icon.texture = orderData.characterIcon
+	$icon.texture = orderData.characterInfoData.characterIcon
+	$characterNameLabel.text = orderData.characterInfoData.characterName
 	for hatedIngredientData in orderData.hatedIngredientsData:
 		var hatedIngNode = hatedIngPath.instantiate()
 	

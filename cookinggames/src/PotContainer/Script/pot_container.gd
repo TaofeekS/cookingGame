@@ -27,3 +27,8 @@ func potItemDeleted(node):
 	
 	potItemsData.erase(nodeIngredientData)
 	node.queue_free()
+
+
+func deleteAllItem():
+	for node in $GridContainer.get_children():
+		potItemDeleted(node)

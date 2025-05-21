@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://bpfkfwxkgm3xq"]
+
+[ext_resource type="Texture2D" uid="uid://desdfvkmsvv6g" path="res://icon.svg" id="1_1w33b"]
+[ext_resource type="Script" path="res://Resource/Script/CharacterData.gd" id="1_dgwpe"]
+
+[resource]
+script = ExtResource("1_dgwpe")
+characterIcon = ExtResource("1_1w33b")
+characterName = "ade"
+GoodDialoguesList = Array[String](["[center][b]just okay[/b][center]", "i have eaten better food"])
+BadDialoguesList = Array[String](["who hired you !!!!!!!!!!!", "You are getting fired today"])
+ConfusedDialoguesList = Array[String](["i didnt ask for this", "hmmmmm
+"])

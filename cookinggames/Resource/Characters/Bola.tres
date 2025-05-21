@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://nq6gl6vjr7un"]
+
+[ext_resource type="Texture2D" uid="uid://desdfvkmsvv6g" path="res://icon.svg" id="1_8s678"]
+[ext_resource type="Script" path="res://Resource/Script/CharacterData.gd" id="2_gluca"]
+
+[resource]
+script = ExtResource("2_gluca")
+characterIcon = ExtResource("1_8s678")
+characterName = "Ade"
+GoodDialoguesList = Array[String](["Good food ", "Delicous"])
+BadDialoguesList = Array[String](["Where do you learn to cook ?", "You are a bad chef"])
+ConfusedDialoguesList = Array[String](["is this edible?", "hmmmmmmmmmm"])

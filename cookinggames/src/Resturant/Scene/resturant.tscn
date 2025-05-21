@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://erjc4y4cmsiw"]
+[gd_scene load_steps=28 format=3 uid="uid://erjc4y4cmsiw"]
 
 [ext_resource type="Script" path="res://src/Resturant/Script/resturant.gd" id="1_a16i8"]
 [ext_resource type="Script" path="res://src/IngredientCont/Script/ingredient_cont.gd" id="1_yannf"]
@@ -6,58 +6,62 @@
 [ext_resource type="Script" path="res://Resource/Script/OrderData.gd" id="2_oivbp"]
 [ext_resource type="Texture2D" uid="uid://desdfvkmsvv6g" path="res://icon.svg" id="3_c6hwc"]
 [ext_resource type="Resource" uid="uid://bwonn8gs4hb7h" path="res://Resource/Ingredient/ghee.tres" id="3_c12bj"]
+[ext_resource type="Resource" uid="uid://bpfkfwxkgm3xq" path="res://Resource/Characters/Ade.tres" id="3_k5r21"]
 [ext_resource type="Resource" uid="uid://ch5dyugset1j1" path="res://Resource/Food/Eba.tres" id="3_rn8sq"]
 [ext_resource type="Resource" uid="uid://db5mykv3msvrq" path="res://Resource/Ingredient/mug_cake.tres" id="4_oh5en"]
 [ext_resource type="Resource" uid="uid://boyf2nvc7sebu" path="res://Resource/Ingredient/pancake.tres" id="5_75b37"]
 [ext_resource type="Resource" uid="uid://c7w654hynopd8" path="res://Resource/Ingredient/smootie.tres" id="6_ywgcb"]
+[ext_resource type="Resource" uid="uid://nq6gl6vjr7un" path="res://Resource/Characters/Bola.tres" id="7_8wkd5"]
 [ext_resource type="Resource" uid="uid://rqouv35acd2l" path="res://Resource/Ingredient/toast.tres" id="7_f0x7e"]
 [ext_resource type="PackedScene" uid="uid://duvsi3r8ft023" path="res://src/IngBtn/Scene/ing_btn.tscn" id="8_dj4mr"]
 [ext_resource type="Script" path="res://src/PotContainer/Script/pot_container.gd" id="9_gfd3h"]
+[ext_resource type="Resource" uid="uid://c5hlf2tv5we4h" path="res://Resource/Characters/dayo.tres" id="11_p6d8k"]
 [ext_resource type="Script" path="res://src/OrderInfo/Script/order_info.gd" id="14_tjape"]
 [ext_resource type="PackedScene" uid="uid://bpfw14fvg18jo" path="res://src/hatedIngredientNode/Scene/hated_ingredient_node.tscn" id="15_gshio"]
 [ext_resource type="Texture2D" uid="uid://wckgmcyrqydp" path="res://assets/Blueberry_Porridge.png" id="16_b6xw0"]
+[ext_resource type="Script" path="res://src/DialoguePanel/Script/dialogue_panel.gd" id="20_afjqa"]
 
 [sub_resource type="Resource" id="Resource_s2xf3"]
 script = ExtResource("2_oivbp")
-characterIcon = ExtResource("3_c6hwc")
 foodOrder = ExtResource("3_rn8sq")
 hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("4_oh5en")])
+characterInfoData = ExtResource("3_k5r21")
 
 [sub_resource type="Resource" id="Resource_qypts"]
 script = ExtResource("2_oivbp")
-characterIcon = ExtResource("3_c6hwc")
 foodOrder = ExtResource("3_rn8sq")
 hatedIngredientsData = Array[ExtResource("2_mao1v")]([])
+characterInfoData = ExtResource("7_8wkd5")
 
 [sub_resource type="Resource" id="Resource_tw3co"]
 script = ExtResource("2_oivbp")
-characterIcon = ExtResource("3_c6hwc")
 foodOrder = ExtResource("3_rn8sq")
 hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("6_ywgcb"), ExtResource("5_75b37"), ExtResource("3_c12bj")])
+characterInfoData = ExtResource("3_k5r21")
 
 [sub_resource type="Resource" id="Resource_3mnye"]
 script = ExtResource("2_oivbp")
-characterIcon = ExtResource("3_c6hwc")
 foodOrder = ExtResource("3_rn8sq")
 hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("6_ywgcb"), ExtResource("7_f0x7e")])
+characterInfoData = ExtResource("11_p6d8k")
 
 [sub_resource type="Resource" id="Resource_va0fd"]
 script = ExtResource("2_oivbp")
-characterIcon = ExtResource("3_c6hwc")
 foodOrder = ExtResource("3_rn8sq")
 hatedIngredientsData = Array[ExtResource("2_mao1v")]([])
+characterInfoData = ExtResource("11_p6d8k")
 
 [sub_resource type="Resource" id="Resource_qll8a"]
 script = ExtResource("2_oivbp")
-characterIcon = ExtResource("3_c6hwc")
 foodOrder = ExtResource("3_rn8sq")
 hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("3_c12bj"), ExtResource("7_f0x7e")])
+characterInfoData = ExtResource("3_k5r21")
 
 [sub_resource type="Resource" id="Resource_ljkhe"]
 script = ExtResource("2_oivbp")
-characterIcon = ExtResource("3_c6hwc")
 foodOrder = ExtResource("3_rn8sq")
 hatedIngredientsData = Array[ExtResource("2_mao1v")]([ExtResource("3_c12bj"), ExtResource("6_ywgcb")])
+characterInfoData = ExtResource("7_8wkd5")
 
 [node name="Resturant" type="Control"]
 layout_mode = 3
@@ -185,6 +189,23 @@ text = "AGAGAFGAFGAFGAF"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="characterNameLabel" type="Label" parent="orderInfo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.5
+offset_top = -82.0
+offset_right = 230.5
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BOLA BOLA BOLA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 2
@@ -197,3 +218,43 @@ offset_bottom = -4.0
 grow_vertical = 0
 text = "prepare
 "
+
+[node name="dialoguePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -292.0
+offset_top = -227.0
+offset_right = 292.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("20_afjqa")
+
+[node name="CharacterName" type="Label" parent="dialoguePanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "SJGSJGJGSGSHGHSFGSHfg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialoguePanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center] Lovely [b]food[b] [center]"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="gui_input" from="dialoguePanel" to="dialoguePanel" method="_on_gui_input"]
